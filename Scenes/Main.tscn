@@ -1,4 +1,4 @@
-[gd_scene load_steps=10 format=2]
+[gd_scene load_steps=36 format=2]
 
 [ext_resource path="res://icon.png" type="Texture" id=1]
 [ext_resource path="res://Scenes/Paddle.tscn" type="PackedScene" id=2]
@@ -7,6 +7,146 @@
 [ext_resource path="res://ARCADE_N.TTF" type="DynamicFontData" id=5]
 [ext_resource path="res://Sprites/White Circle.png" type="Texture" id=6]
 [ext_resource path="res://Sprites/Selected.png" type="Texture" id=7]
+[ext_resource path="res://Sprites/Plus.png" type="Texture" id=8]
+
+[sub_resource type="DynamicFont" id=3]
+font_data = ExtResource( 5 )
+
+[sub_resource type="DynamicFont" id=4]
+font_data = ExtResource( 5 )
+
+[sub_resource type="Gradient" id=5]
+colors = PoolColorArray( 0, 0, 1, 1, 0, 0, 1, 0 )
+
+[sub_resource type="GradientTexture" id=6]
+gradient = SubResource( 5 )
+
+[sub_resource type="ParticlesMaterial" id=7]
+emission_shape = 2
+emission_box_extents = Vector3( 20, 1, 1 )
+flag_disable_z = true
+gravity = Vector3( 0, -98, 0 )
+orbit_velocity = 0.0
+orbit_velocity_random = 0.0
+radial_accel = -70.0
+color_ramp = SubResource( 6 )
+
+[sub_resource type="ParticlesMaterial" id=14]
+emission_shape = 2
+emission_box_extents = Vector3( 20, 1, 1 )
+flag_disable_z = true
+gravity = Vector3( 0, -200, 0 )
+orbit_velocity = 0.0
+orbit_velocity_random = 0.0
+radial_accel = -70.0
+color_ramp = SubResource( 6 )
+
+[sub_resource type="ParticlesMaterial" id=15]
+emission_shape = 2
+emission_box_extents = Vector3( 20, 1, 1 )
+flag_disable_z = true
+gravity = Vector3( 0, -300, 0 )
+orbit_velocity = 0.0
+orbit_velocity_random = 0.0
+radial_accel = -70.0
+color_ramp = SubResource( 6 )
+
+[sub_resource type="Gradient" id=8]
+colors = PoolColorArray( 0, 1, 0, 1, 0, 1, 0, 0 )
+
+[sub_resource type="GradientTexture" id=9]
+gradient = SubResource( 8 )
+
+[sub_resource type="ParticlesMaterial" id=10]
+emission_shape = 2
+emission_box_extents = Vector3( 20, 1, 1 )
+flag_disable_z = true
+gravity = Vector3( 0, -98, 0 )
+orbit_velocity = 0.0
+orbit_velocity_random = 0.0
+radial_accel = -70.0
+color_ramp = SubResource( 9 )
+
+[sub_resource type="Gradient" id=16]
+colors = PoolColorArray( 0, 1, 0, 1, 0, 1, 0, 0 )
+
+[sub_resource type="GradientTexture" id=17]
+gradient = SubResource( 16 )
+
+[sub_resource type="ParticlesMaterial" id=18]
+emission_shape = 2
+emission_box_extents = Vector3( 20, 1, 1 )
+flag_disable_z = true
+gravity = Vector3( 0, -200, 0 )
+orbit_velocity = 0.0
+orbit_velocity_random = 0.0
+radial_accel = -70.0
+color_ramp = SubResource( 17 )
+
+[sub_resource type="Gradient" id=19]
+colors = PoolColorArray( 0, 1, 0, 1, 0, 1, 0, 0 )
+
+[sub_resource type="GradientTexture" id=20]
+gradient = SubResource( 19 )
+
+[sub_resource type="ParticlesMaterial" id=21]
+emission_shape = 2
+emission_box_extents = Vector3( 20, 1, 1 )
+flag_disable_z = true
+gravity = Vector3( 0, -300, 0 )
+orbit_velocity = 0.0
+orbit_velocity_random = 0.0
+radial_accel = -70.0
+color_ramp = SubResource( 20 )
+
+[sub_resource type="Gradient" id=11]
+colors = PoolColorArray( 1, 0, 0, 1, 1, 0, 0, 0 )
+
+[sub_resource type="GradientTexture" id=12]
+gradient = SubResource( 11 )
+
+[sub_resource type="ParticlesMaterial" id=13]
+emission_shape = 2
+emission_box_extents = Vector3( 20, 1, 1 )
+flag_disable_z = true
+gravity = Vector3( 0, -98, 0 )
+orbit_velocity = 0.0
+orbit_velocity_random = 0.0
+radial_accel = -70.0
+color_ramp = SubResource( 12 )
+
+[sub_resource type="Gradient" id=22]
+offsets = PoolRealArray( 0, 0.992593, 1 )
+colors = PoolColorArray( 1, 0, 0, 1, 1, 0, 0, 0, 0, 0, 1, 0 )
+
+[sub_resource type="GradientTexture" id=23]
+gradient = SubResource( 22 )
+
+[sub_resource type="ParticlesMaterial" id=24]
+emission_shape = 2
+emission_box_extents = Vector3( 20, 1, 1 )
+flag_disable_z = true
+gravity = Vector3( 0, -200, 0 )
+orbit_velocity = 0.0
+orbit_velocity_random = 0.0
+radial_accel = -70.0
+color_ramp = SubResource( 23 )
+
+[sub_resource type="Gradient" id=25]
+colors = PoolColorArray( 1, 0, 0, 1, 1, 0, 0, 0 )
+
+[sub_resource type="GradientTexture" id=26]
+gradient = SubResource( 25 )
+
+[sub_resource type="ParticlesMaterial" id=27]
+emission_shape = 2
+emission_box_extents = Vector3( 20, 1, 1 )
+flag_disable_z = true
+gravity = Vector3( 0, -300, 0 )
+orbit_velocity = 0.0
+orbit_velocity_random = 0.0
+radial_accel = -70.0
+color_ramp = SubResource( 26 )
 
 [sub_resource type="DynamicFont" id=1]
 font_data = ExtResource( 5 )
@@ -28,7 +168,70 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="Scores" type="HBoxContainer" parent="Camera2D/UI/Control"]
+[node name="Scores" type="Control" parent="Camera2D/UI/Control"]
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = -172.0
+margin_top = -360.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Energy" type="Label" parent="Camera2D/UI/Control/Scores"]
+margin_left = 32.0
+margin_top = 140.0
+margin_right = 53.0
+margin_bottom = 224.0
+custom_fonts/font = SubResource( 3 )
+custom_colors/font_color = Color( 0.603922, 0.603922, 1, 1 )
+text = "E
+n
+e
+r
+g
+y"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Fitness" type="Label" parent="Camera2D/UI/Control/Scores"]
+margin_left = 77.0
+margin_top = 140.0
+margin_right = 96.0
+margin_bottom = 224.0
+custom_fonts/font = SubResource( 4 )
+custom_colors/font_color = Color( 0.603922, 1, 0.603922, 1 )
+text = "F
+i
+t
+n
+e
+s
+s"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Social" type="Label" parent="Camera2D/UI/Control/Scores"]
+margin_left = 122.0
+margin_top = 140.0
+margin_right = 146.0
+margin_bottom = 224.0
+custom_fonts/font = SubResource( 4 )
+custom_colors/font_color = Color( 1, 0.603922, 0.603922, 1 )
+text = "S
+o
+c
+i
+a
+l"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Scores" type="HBoxContainer" parent="Camera2D/UI/Control/Scores"]
 anchor_left = 1.0
 anchor_top = 1.0
 anchor_right = 1.0
@@ -39,31 +242,97 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="EnergyBar" type="TextureProgress" parent="Camera2D/UI/Control/Scores"]
+[node name="EnergyBar" type="TextureProgress" parent="Camera2D/UI/Control/Scores/Scores"]
 margin_right = 40.0
 margin_bottom = 227.0
+step = 0.1
 value = 50.0
 texture_progress = ExtResource( 4 )
 fill_mode = 3
 tint_progress = Color( 0.0784314, 0.223529, 1, 1 )
 
-[node name="FitnessBar" type="TextureProgress" parent="Camera2D/UI/Control/Scores"]
+[node name="Particles" type="Particles2D" parent="Camera2D/UI/Control/Scores/Scores/EnergyBar"]
+position = Vector2( 18, 200 )
+emitting = false
+lifetime = 3.0
+process_material = SubResource( 7 )
+texture = ExtResource( 8 )
+
+[node name="Particles2" type="Particles2D" parent="Camera2D/UI/Control/Scores/Scores/EnergyBar"]
+position = Vector2( 18, 200 )
+emitting = false
+lifetime = 2.0
+process_material = SubResource( 14 )
+texture = ExtResource( 8 )
+
+[node name="Particles3" type="Particles2D" parent="Camera2D/UI/Control/Scores/Scores/EnergyBar"]
+position = Vector2( 18, 200 )
+emitting = false
+lifetime = 1.5
+process_material = SubResource( 15 )
+texture = ExtResource( 8 )
+
+[node name="FitnessBar" type="TextureProgress" parent="Camera2D/UI/Control/Scores/Scores"]
 margin_left = 44.0
 margin_right = 84.0
 margin_bottom = 227.0
+step = 0.1
 value = 50.0
 texture_progress = ExtResource( 4 )
 fill_mode = 3
 tint_progress = Color( 0.223529, 1, 0.0784314, 1 )
 
-[node name="SocialBar" type="TextureProgress" parent="Camera2D/UI/Control/Scores"]
+[node name="Particles" type="Particles2D" parent="Camera2D/UI/Control/Scores/Scores/FitnessBar"]
+position = Vector2( 20, 200 )
+emitting = false
+lifetime = 3.0
+process_material = SubResource( 10 )
+texture = ExtResource( 8 )
+
+[node name="Particles2" type="Particles2D" parent="Camera2D/UI/Control/Scores/Scores/FitnessBar"]
+position = Vector2( 20, 200 )
+emitting = false
+lifetime = 2.0
+process_material = SubResource( 18 )
+texture = ExtResource( 8 )
+
+[node name="Particles3" type="Particles2D" parent="Camera2D/UI/Control/Scores/Scores/FitnessBar"]
+position = Vector2( 20, 200 )
+emitting = false
+lifetime = 1.5
+process_material = SubResource( 21 )
+texture = ExtResource( 8 )
+
+[node name="SocialBar" type="TextureProgress" parent="Camera2D/UI/Control/Scores/Scores"]
 margin_left = 88.0
 margin_right = 128.0
 margin_bottom = 227.0
+step = 0.1
 value = 50.0
 texture_progress = ExtResource( 4 )
 fill_mode = 3
 tint_progress = Color( 1, 0, 0, 1 )
+
+[node name="Particles" type="Particles2D" parent="Camera2D/UI/Control/Scores/Scores/SocialBar"]
+position = Vector2( 20, 200 )
+emitting = false
+lifetime = 3.0
+process_material = SubResource( 13 )
+texture = ExtResource( 8 )
+
+[node name="Particles2" type="Particles2D" parent="Camera2D/UI/Control/Scores/Scores/SocialBar"]
+position = Vector2( 20, 200 )
+emitting = false
+lifetime = 2.0
+process_material = SubResource( 24 )
+texture = ExtResource( 8 )
+
+[node name="Particles3" type="Particles2D" parent="Camera2D/UI/Control/Scores/Scores/SocialBar"]
+position = Vector2( 20, 200 )
+emitting = false
+lifetime = 1.5
+process_material = SubResource( 27 )
+texture = ExtResource( 8 )
 
 [node name="Score" type="Label" parent="Camera2D/UI/Control"]
 anchor_left = 1.0

@@ -26,6 +26,15 @@ func _input(event):
 		ChangePaddle(-1)
 	elif event.is_action_pressed("mouse_wheel_down"):
 		ChangePaddle(1)
+	elif event.is_action_pressed("ui_one"):
+		SelectedPaddle = 1
+		SetPaddle()
+	elif event.is_action_pressed("ui_two"):
+		SelectedPaddle = 2
+		SetPaddle()
+	elif event.is_action_pressed("ui_three"):
+		SelectedPaddle = 3
+		SetPaddle()
 
 func ChangePaddle(direction):
 	SelectedPaddle += direction
@@ -33,7 +42,9 @@ func ChangePaddle(direction):
 		SelectedPaddle = 3
 	elif SelectedPaddle > 3:
 		SelectedPaddle = 1
-	
+	SetPaddle()
+
+func SetPaddle():
 	$Paddles/RedPaddle.IsActive = SelectedPaddle == 1
 	$Paddles/GreenPaddle.IsActive = SelectedPaddle == 2
 	$Paddles/BluePaddle.IsActive = SelectedPaddle == 3
@@ -57,17 +68,26 @@ func _process(delta):
 	if mousePos.distance_to(Vector2(0, 0)) > 30.0:
 		get_viewport().warp_mouse(Vector2(400, 400) - (mouseDir.normalized() * 30.0))
 	
-	var malus = 0.1 * delta
-	Energy = clamp(Energy - malus, 0.0, 100.0)
-	Fitness = clamp(Fitness - malus, 0.0, 100.0)
-	Social = clamp(Social - malus, 0.0, 100.0)
-	$Camera2D/UI/Control/Scores/EnergyBar.value = Energy
-	$Camera2D/UI/Control/Scores/FitnessBar.value = Fitness
-	$Camera2D/UI/Control/Scores/SocialBar.value = Social
+	Energy = clamp(Energy, 0.0, 100.0)
+	Fitness = clamp(Fitness, 0.0, 100.0)
+	Social = clamp(Social, 0.0, 100.0)
+	$Camera2D/UI/Control/Scores/Scores/EnergyBar.value = Energy
+	$Camera2D/UI/Control/Scores/Scores/FitnessBar.value = Fitness
+	$Camera2D/UI/Control/Scores/Scores/SocialBar.value = Social
+	
+	$Camera2D/UI/Control/Scores/Scores/EnergyBar/Particles.emitting = Energy > 50
+	$Camera2D/UI/Control/Scores/Scores/EnergyBar/Particles2.emitting = Energy > 65
+	$Camera2D/UI/Control/Scores/Scores/EnergyBar/Particles3.emitting = Energy > 80
+	$Camera2D/UI/Control/Scores/Scores/FitnessBar/Particles.emitting = Fitness > 50
+	$Camera2D/UI/Control/Scores/Scores/FitnessBar/Particles2.emitting = Fitness > 65
+	$Camera2D/UI/Control/Scores/Scores/FitnessBar/Particles3.emitting = Fitness > 80
+	$Camera2D/UI/Control/Scores/Scores/SocialBar/Particles.emitting = Social > 50
+	$Camera2D/UI/Control/Scores/Scores/SocialBar/Particles2.emitting = Social > 65
+	$Camera2D/UI/Control/Scores/Scores/SocialBar/Particles3.emitting = Social > 80
 	
 	$Camera2D/UI/Control/Score.text = str(Score)
 	
-	EventSpawnTime = max(EventSpawnTime - (0.01 * delta), 0.5)
+	EventSpawnTime = max(EventSpawnTime - (0.03 * delta), 0.5)
 	$EventSpawnTimer.wait_time = EventSpawnTime
 	
 	if Social <= 0.0 or Fitness <= 0.0 or Energy <= 0.0:
@@ -88,23 +108,23 @@ func SpawnNewEvent():
 	var eventType = randi() % 9
 	match eventType: #                       Fit, Energy, Social
 		0: # Bed
-			event.SetEventType(3, eventType, 0.0, 30.0, -15.0)
+			event.SetEventType(3, eventType, 0.0, 30.0, -30.0)
 		1: # Apple
-			event.SetEventType(2, eventType, 15.0, 0.0, 0.0)
+			event.SetEventType(2, eventType, 15.0, 0.0, -15.0)
 		2: # Bar
-			event.SetEventType(1, eventType, -15.0, 0.0, 30.0)
+			event.SetEventType(1, eventType, -30.0, 0.0, 30.0)
 		3: # Energy Drink
-			event.SetEventType(3, eventType, -15.0, 30.0, 0.0)
+			event.SetEventType(3, eventType, -30.0, 30.0, 0.0)
 		4: # GYM
-			event.SetEventType(2, eventType, 30.0, -15.0, 0.0)
+			event.SetEventType(2, eventType, 30.0, -30.0, 0.0)
 		5: # Talk
-			event.SetEventType(1, eventType, 0, 0.0, 15.0)
+			event.SetEventType(1, eventType, 0, -15.0, 15.0)
 		6: # Concert
-			event.SetEventType(1, eventType, 0, -15.0, 30.0)
+			event.SetEventType(1, eventType, 0, -30.0, 30.0)
 		7: # Coffee
-			event.SetEventType(3, eventType, 0, 15.0, 0)
+			event.SetEventType(3, eventType, -15.0, 15.0, 0)
 		8: # Meditation
-			event.SetEventType(2, eventType, 30.0, 0, -15.0)
+			event.SetEventType(2, eventType, 30.0, 0, -30.0)
 	
 	event.connect("Impact", self, "onEventImpact")
 	
