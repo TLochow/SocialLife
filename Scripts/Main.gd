@@ -2,6 +2,8 @@ extends Node2D
 
 var EVENTSCENE = preload("res://Scenes/Event.tscn")
 
+var Score = 0
+
 var Fitness = 50.0
 var Energy = 50.0
 var Social = 50.0
@@ -55,6 +57,8 @@ func _process(delta):
 	$Camera2D/UI/Control/Scores/EnergyBar.value = Energy
 	$Camera2D/UI/Control/Scores/FitnessBar.value = Fitness
 	$Camera2D/UI/Control/Scores/SocialBar.value = Social
+	
+	$Camera2D/UI/Control/Score.text = str(Score)
 
 func _on_EventSpawnTimer_timeout():
 	SpawnNewEvent()
@@ -101,3 +105,11 @@ func onEventImpact(fitness, energy, social):
 
 func _on_Middle_body_entered(body):
 	body.ReachedMiddle()
+
+func _on_ScoringTimer_timeout():
+	if Social > 50:
+		Score += int(Social - 50)
+	if Fitness > 50:
+		Score += int(Fitness - 50)
+	if Energy > 50:
+		Score += int(Energy - 50)
