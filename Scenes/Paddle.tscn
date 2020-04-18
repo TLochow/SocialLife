@@ -4,6 +4,7 @@
 [ext_resource path="res://Sprites/Quarter Circle.png" type="Texture" id=2]
 
 [node name="Paddle" type="Area2D"]
+gravity = 0.0
 collision_layer = 0
 collision_mask = 0
 script = ExtResource( 1 )
@@ -14,3 +15,4 @@ polygon = PoolVector2Array( -48, -48, -56, -56, -48, -64, -32, -72, -8, -80, 8, 
 [node name="Sprite" type="Sprite" parent="."]
 scale = Vector2( 0.2, 0.2 )
 texture = ExtResource( 2 )
+[connection signal="body_entered" from="." to="." method="_on_Paddle_body_entered"]
