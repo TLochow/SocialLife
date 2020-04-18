@@ -74,6 +74,9 @@ and which you embrace.
 Each aspect that you can hold above 50% gives you
 points (The higher the bar the more points you
 get). Should one Aspect hit 0% the game ends."
+__meta__ = {
+"_edit_use_anchors_": false
+}
 
 [node name="MenuButton" type="Button" parent="."]
 anchor_left = 0.5

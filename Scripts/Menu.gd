@@ -15,3 +15,6 @@ func _on_HowToPlayButton_pressed():
 
 func _on_QuitButton_pressed():
 	SceneChanger.EndGame()
+
+func _on_ColorBlindModeButton_pressed():
+	SceneChanger.ChangeColorblindMode()
