@@ -96,13 +96,14 @@ anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
 margin_left = -376.0
-margin_top = -28.5
-margin_right = 376.0
-margin_bottom = 28.5
+margin_top = -67.0
+margin_right = 392.0
+margin_bottom = 49.0
 custom_fonts/font = SubResource( 3 )
 text = "Since this game heavily depends on colors here
 is a rudimentary filter function for colorblind
-players:"
+people. If you have trouble distinguishing
+between the colors maybe one of these will help."
 
 [node name="ColorBlindModeButton" type="Button" parent="ColorBlind"]
 anchor_left = 0.5

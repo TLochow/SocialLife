@@ -59,9 +59,9 @@ void fragment() {
     vec4 glowing_col = 0.25 * (col0 + col1 + col2 + col3);
 	
 	vec4 px = vec4(col.rgb + glowing_col.rgb, col.a);
-	if (colorblindmode==1) { px = px.gbra; }
-	if (colorblindmode==2) { px = px.brga; }
-	if (colorblindmode==3) { px = px.bgra; }
+	if (colorblindmode==1) { px = px.rbra; }
+	if (colorblindmode==2) { px = px.bgga; }
+	if (colorblindmode==3) { px = px.ggra; }
 	COLOR = vec4(px.rgb,1.0);
 }"
 
