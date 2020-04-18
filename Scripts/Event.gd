@@ -22,6 +22,10 @@ func SetEventType(type, sprite, fitnessBoost, energyBoost, socialBoost):
 	SocialBoost  = socialBoost * 0.5
 	$Sprite.frame = sprite
 	
+	$Glow/Red.visible = type == 1
+	$Glow/Green.visible = type == 2
+	$Glow/Blue.visible = type == 3
+	
 	$Particles/SocialPlus.emitting = socialBoost > 0
 	$Particles/SocialMinus.emitting = socialBoost < 0
 	$Particles/FitnessPlus.emitting = fitnessBoost > 0

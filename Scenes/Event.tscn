@@ -1,68 +1,69 @@
-[gd_scene load_steps=17 format=2]
+[gd_scene load_steps=18 format=2]
 
 [ext_resource path="res://Sprites/Events.png" type="Texture" id=1]
 [ext_resource path="res://Scripts/Event.gd" type="Script" id=2]
 [ext_resource path="res://Sprites/Plus.png" type="Texture" id=3]
 [ext_resource path="res://Sprites/Minus.png" type="Texture" id=4]
+[ext_resource path="res://Sprites/Light Gradient.png" type="Texture" id=5]
 
 [sub_resource type="PhysicsMaterial" id=1]
 friction = 0.0
 
 [sub_resource type="CircleShape2D" id=2]
 
-[sub_resource type="Gradient" id=6]
+[sub_resource type="Gradient" id=3]
 colors = PoolColorArray( 1, 0, 0, 1, 1, 0, 0, 0 )
 
-[sub_resource type="GradientTexture" id=5]
-gradient = SubResource( 6 )
+[sub_resource type="GradientTexture" id=4]
+gradient = SubResource( 3 )
 
-[sub_resource type="ParticlesMaterial" id=3]
+[sub_resource type="ParticlesMaterial" id=5]
 emission_shape = 1
 emission_sphere_radius = 10.0
 flag_disable_z = true
 gravity = Vector3( 0, 0, 0 )
 orbit_velocity = 0.0
 orbit_velocity_random = 0.0
-color_ramp = SubResource( 5 )
+color_ramp = SubResource( 4 )
 
-[sub_resource type="ParticlesMaterial" id=7]
+[sub_resource type="ParticlesMaterial" id=6]
 emission_shape = 1
 emission_sphere_radius = 10.0
 flag_disable_z = true
 gravity = Vector3( 0, 0, 0 )
 orbit_velocity = 0.0
 orbit_velocity_random = 0.0
-color_ramp = SubResource( 5 )
+color_ramp = SubResource( 4 )
 
-[sub_resource type="Gradient" id=8]
+[sub_resource type="Gradient" id=7]
 colors = PoolColorArray( 0, 1, 0, 1, 0, 1, 0, 0 )
 
-[sub_resource type="GradientTexture" id=9]
-gradient = SubResource( 8 )
+[sub_resource type="GradientTexture" id=8]
+gradient = SubResource( 7 )
 
-[sub_resource type="ParticlesMaterial" id=10]
+[sub_resource type="ParticlesMaterial" id=9]
 emission_shape = 1
 emission_sphere_radius = 10.0
 flag_disable_z = true
 gravity = Vector3( 0, 0, 0 )
 orbit_velocity = 0.0
 orbit_velocity_random = 0.0
-color_ramp = SubResource( 9 )
+color_ramp = SubResource( 8 )
 
-[sub_resource type="Gradient" id=11]
+[sub_resource type="Gradient" id=10]
 colors = PoolColorArray( 0, 0.484375, 1, 1, 0, 0.486275, 1, 0 )
 
-[sub_resource type="GradientTexture" id=12]
-gradient = SubResource( 11 )
+[sub_resource type="GradientTexture" id=11]
+gradient = SubResource( 10 )
 
-[sub_resource type="ParticlesMaterial" id=13]
+[sub_resource type="ParticlesMaterial" id=12]
 emission_shape = 1
 emission_sphere_radius = 10.0
 flag_disable_z = true
 gravity = Vector3( 0, 0, 0 )
 orbit_velocity = 0.0
 orbit_velocity_random = 0.0
-color_ramp = SubResource( 12 )
+color_ramp = SubResource( 11 )
 
 [node name="Event" type="RigidBody2D"]
 collision_layer = 7
@@ -75,6 +76,23 @@ script = ExtResource( 2 )
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource( 2 )
 
+[node name="Glow" type="Node2D" parent="."]
+
+[node name="Red" type="Sprite" parent="Glow"]
+modulate = Color( 1, 0, 0, 1 )
+scale = Vector2( 0.15, 0.15 )
+texture = ExtResource( 5 )
+
+[node name="Green" type="Sprite" parent="Glow"]
+modulate = Color( 0, 1, 0, 1 )
+scale = Vector2( 0.15, 0.15 )
+texture = ExtResource( 5 )
+
+[node name="Blue" type="Sprite" parent="Glow"]
+modulate = Color( 0, 0, 1, 1 )
+scale = Vector2( 0.15, 0.15 )
+texture = ExtResource( 5 )
+
 [node name="Sprite" type="Sprite" parent="."]
 scale = Vector2( 2, 2 )
 texture = ExtResource( 1 )
@@ -85,35 +103,35 @@ hframes = 10
 [node name="SocialPlus" type="Particles2D" parent="Particles"]
 emitting = false
 local_coords = false
-process_material = SubResource( 3 )
+process_material = SubResource( 5 )
 texture = ExtResource( 3 )
 
 [node name="SocialMinus" type="Particles2D" parent="Particles"]
 emitting = false
 local_coords = false
-process_material = SubResource( 7 )
+process_material = SubResource( 6 )
 texture = ExtResource( 4 )
 
 [node name="FitnessPlus" type="Particles2D" parent="Particles"]
 emitting = false
 local_coords = false
-process_material = SubResource( 10 )
+process_material = SubResource( 9 )
 texture = ExtResource( 3 )
 
 [node name="FitnessMinus" type="Particles2D" parent="Particles"]
 emitting = false
 local_coords = false
-process_material = SubResource( 10 )
+process_material = SubResource( 9 )
 texture = ExtResource( 4 )
 
 [node name="EnergyPlus" type="Particles2D" parent="Particles"]
 emitting = false
 local_coords = false
-process_material = SubResource( 13 )
+process_material = SubResource( 12 )
 texture = ExtResource( 3 )
 
 [node name="EnergyMinus" type="Particles2D" parent="Particles"]
 emitting = false
 local_coords = false
-process_material = SubResource( 13 )
+process_material = SubResource( 12 )
 texture = ExtResource( 4 )

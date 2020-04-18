@@ -69,6 +69,10 @@ func _process(delta):
 	
 	EventSpawnTime = max(EventSpawnTime - (0.01 * delta), 0.5)
 	$EventSpawnTimer.wait_time = EventSpawnTime
+	
+	if Social <= 0.0 or Fitness <= 0.0 or Energy <= 0.0:
+		Global.Score = Score
+		SceneChanger.ChangeScene("res://Scenes/GameOver.tscn")
 
 func _on_EventSpawnTimer_timeout():
 	SpawnNewEvent()
