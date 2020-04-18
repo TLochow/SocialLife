@@ -21,7 +21,7 @@ func _ready():
 	
 func _input(event):
 	if event.is_action_pressed("ui_cancel"):
-		SceneChanger.EndGame()
+		SceneChanger.ChangeScene("res://Scenes/Menu.tscn")
 	elif event.is_action_pressed("mouse_wheel_up"):
 		ChangePaddle(-1)
 	elif event.is_action_pressed("mouse_wheel_down"):
@@ -68,9 +68,10 @@ func _process(delta):
 	if mousePos.distance_to(Vector2(0, 0)) > 30.0:
 		get_viewport().warp_mouse(Vector2(400, 400) - (mouseDir.normalized() * 30.0))
 	
-	Energy = clamp(Energy, 0.0, 100.0)
-	Fitness = clamp(Fitness, 0.0, 100.0)
-	Social = clamp(Social, 0.0, 100.0)
+	var malus = 0.1 * delta
+	Energy = clamp(Energy - malus, 0.0, 100.0)
+	Fitness = clamp(Fitness - malus, 0.0, 100.0)
+	Social = clamp(Social - malus, 0.0, 100.0)
 	$Camera2D/UI/Control/Scores/Scores/EnergyBar.value = Energy
 	$Camera2D/UI/Control/Scores/Scores/FitnessBar.value = Fitness
 	$Camera2D/UI/Control/Scores/Scores/SocialBar.value = Social

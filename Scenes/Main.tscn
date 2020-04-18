@@ -9,19 +9,19 @@
 [ext_resource path="res://Sprites/Selected.png" type="Texture" id=7]
 [ext_resource path="res://Sprites/Plus.png" type="Texture" id=8]
 
-[sub_resource type="DynamicFont" id=3]
+[sub_resource type="DynamicFont" id=1]
 font_data = ExtResource( 5 )
 
-[sub_resource type="DynamicFont" id=4]
+[sub_resource type="DynamicFont" id=2]
 font_data = ExtResource( 5 )
 
-[sub_resource type="Gradient" id=5]
+[sub_resource type="Gradient" id=3]
 colors = PoolColorArray( 0, 0, 1, 1, 0, 0, 1, 0 )
 
-[sub_resource type="GradientTexture" id=6]
-gradient = SubResource( 5 )
+[sub_resource type="GradientTexture" id=4]
+gradient = SubResource( 3 )
 
-[sub_resource type="ParticlesMaterial" id=7]
+[sub_resource type="ParticlesMaterial" id=5]
 emission_shape = 2
 emission_box_extents = Vector3( 20, 1, 1 )
 flag_disable_z = true
@@ -29,9 +29,9 @@ gravity = Vector3( 0, -98, 0 )
 orbit_velocity = 0.0
 orbit_velocity_random = 0.0
 radial_accel = -70.0
-color_ramp = SubResource( 6 )
+color_ramp = SubResource( 4 )
 
-[sub_resource type="ParticlesMaterial" id=14]
+[sub_resource type="ParticlesMaterial" id=6]
 emission_shape = 2
 emission_box_extents = Vector3( 20, 1, 1 )
 flag_disable_z = true
@@ -39,9 +39,9 @@ gravity = Vector3( 0, -200, 0 )
 orbit_velocity = 0.0
 orbit_velocity_random = 0.0
 radial_accel = -70.0
-color_ramp = SubResource( 6 )
+color_ramp = SubResource( 4 )
 
-[sub_resource type="ParticlesMaterial" id=15]
+[sub_resource type="ParticlesMaterial" id=7]
 emission_shape = 2
 emission_box_extents = Vector3( 20, 1, 1 )
 flag_disable_z = true
@@ -49,7 +49,7 @@ gravity = Vector3( 0, -300, 0 )
 orbit_velocity = 0.0
 orbit_velocity_random = 0.0
 radial_accel = -70.0
-color_ramp = SubResource( 6 )
+color_ramp = SubResource( 4 )
 
 [sub_resource type="Gradient" id=8]
 colors = PoolColorArray( 0, 1, 0, 1, 0, 1, 0, 0 )
@@ -67,40 +67,8 @@ orbit_velocity_random = 0.0
 radial_accel = -70.0
 color_ramp = SubResource( 9 )
 
-[sub_resource type="Gradient" id=16]
-colors = PoolColorArray( 0, 1, 0, 1, 0, 1, 0, 0 )
-
-[sub_resource type="GradientTexture" id=17]
-gradient = SubResource( 16 )
-
-[sub_resource type="ParticlesMaterial" id=18]
-emission_shape = 2
-emission_box_extents = Vector3( 20, 1, 1 )
-flag_disable_z = true
-gravity = Vector3( 0, -200, 0 )
-orbit_velocity = 0.0
-orbit_velocity_random = 0.0
-radial_accel = -70.0
-color_ramp = SubResource( 17 )
-
-[sub_resource type="Gradient" id=19]
-colors = PoolColorArray( 0, 1, 0, 1, 0, 1, 0, 0 )
-
-[sub_resource type="GradientTexture" id=20]
-gradient = SubResource( 19 )
-
-[sub_resource type="ParticlesMaterial" id=21]
-emission_shape = 2
-emission_box_extents = Vector3( 20, 1, 1 )
-flag_disable_z = true
-gravity = Vector3( 0, -300, 0 )
-orbit_velocity = 0.0
-orbit_velocity_random = 0.0
-radial_accel = -70.0
-color_ramp = SubResource( 20 )
-
 [sub_resource type="Gradient" id=11]
-colors = PoolColorArray( 1, 0, 0, 1, 1, 0, 0, 0 )
+colors = PoolColorArray( 0, 1, 0, 1, 0, 1, 0, 0 )
 
 [sub_resource type="GradientTexture" id=12]
 gradient = SubResource( 11 )
@@ -109,36 +77,19 @@ gradient = SubResource( 11 )
 emission_shape = 2
 emission_box_extents = Vector3( 20, 1, 1 )
 flag_disable_z = true
-gravity = Vector3( 0, -98, 0 )
+gravity = Vector3( 0, -200, 0 )
 orbit_velocity = 0.0
 orbit_velocity_random = 0.0
 radial_accel = -70.0
 color_ramp = SubResource( 12 )
 
-[sub_resource type="Gradient" id=22]
-offsets = PoolRealArray( 0, 0.992593, 1 )
-colors = PoolColorArray( 1, 0, 0, 1, 1, 0, 0, 0, 0, 0, 1, 0 )
+[sub_resource type="Gradient" id=14]
+colors = PoolColorArray( 0, 1, 0, 1, 0, 1, 0, 0 )
 
-[sub_resource type="GradientTexture" id=23]
-gradient = SubResource( 22 )
+[sub_resource type="GradientTexture" id=15]
+gradient = SubResource( 14 )
 
-[sub_resource type="ParticlesMaterial" id=24]
-emission_shape = 2
-emission_box_extents = Vector3( 20, 1, 1 )
-flag_disable_z = true
-gravity = Vector3( 0, -200, 0 )
-orbit_velocity = 0.0
-orbit_velocity_random = 0.0
-radial_accel = -70.0
-color_ramp = SubResource( 23 )
-
-[sub_resource type="Gradient" id=25]
-colors = PoolColorArray( 1, 0, 0, 1, 1, 0, 0, 0 )
-
-[sub_resource type="GradientTexture" id=26]
-gradient = SubResource( 25 )
-
-[sub_resource type="ParticlesMaterial" id=27]
+[sub_resource type="ParticlesMaterial" id=16]
 emission_shape = 2
 emission_box_extents = Vector3( 20, 1, 1 )
 flag_disable_z = true
@@ -146,12 +97,61 @@ gravity = Vector3( 0, -300, 0 )
 orbit_velocity = 0.0
 orbit_velocity_random = 0.0
 radial_accel = -70.0
-color_ramp = SubResource( 26 )
+color_ramp = SubResource( 15 )
 
-[sub_resource type="DynamicFont" id=1]
+[sub_resource type="Gradient" id=17]
+colors = PoolColorArray( 1, 0, 0, 1, 1, 0, 0, 0 )
+
+[sub_resource type="GradientTexture" id=18]
+gradient = SubResource( 17 )
+
+[sub_resource type="ParticlesMaterial" id=19]
+emission_shape = 2
+emission_box_extents = Vector3( 20, 1, 1 )
+flag_disable_z = true
+gravity = Vector3( 0, -98, 0 )
+orbit_velocity = 0.0
+orbit_velocity_random = 0.0
+radial_accel = -70.0
+color_ramp = SubResource( 18 )
+
+[sub_resource type="Gradient" id=20]
+offsets = PoolRealArray( 0, 0.992593, 1 )
+colors = PoolColorArray( 1, 0, 0, 1, 1, 0, 0, 0, 0, 0, 1, 0 )
+
+[sub_resource type="GradientTexture" id=21]
+gradient = SubResource( 20 )
+
+[sub_resource type="ParticlesMaterial" id=22]
+emission_shape = 2
+emission_box_extents = Vector3( 20, 1, 1 )
+flag_disable_z = true
+gravity = Vector3( 0, -200, 0 )
+orbit_velocity = 0.0
+orbit_velocity_random = 0.0
+radial_accel = -70.0
+color_ramp = SubResource( 21 )
+
+[sub_resource type="Gradient" id=23]
+colors = PoolColorArray( 1, 0, 0, 1, 1, 0, 0, 0 )
+
+[sub_resource type="GradientTexture" id=24]
+gradient = SubResource( 23 )
+
+[sub_resource type="ParticlesMaterial" id=25]
+emission_shape = 2
+emission_box_extents = Vector3( 20, 1, 1 )
+flag_disable_z = true
+gravity = Vector3( 0, -300, 0 )
+orbit_velocity = 0.0
+orbit_velocity_random = 0.0
+radial_accel = -70.0
+color_ramp = SubResource( 24 )
+
+[sub_resource type="DynamicFont" id=26]
 font_data = ExtResource( 5 )
 
-[sub_resource type="CircleShape2D" id=2]
+[sub_resource type="CircleShape2D" id=27]
 
 [node name="Main" type="Node2D"]
 script = ExtResource( 3 )
@@ -184,7 +184,7 @@ margin_left = 32.0
 margin_top = 140.0
 margin_right = 53.0
 margin_bottom = 224.0
-custom_fonts/font = SubResource( 3 )
+custom_fonts/font = SubResource( 1 )
 custom_colors/font_color = Color( 0.603922, 0.603922, 1, 1 )
 text = "E
 n
@@ -201,7 +201,7 @@ margin_left = 77.0
 margin_top = 140.0
 margin_right = 96.0
 margin_bottom = 224.0
-custom_fonts/font = SubResource( 4 )
+custom_fonts/font = SubResource( 2 )
 custom_colors/font_color = Color( 0.603922, 1, 0.603922, 1 )
 text = "F
 i
@@ -219,7 +219,7 @@ margin_left = 122.0
 margin_top = 140.0
 margin_right = 146.0
 margin_bottom = 224.0
-custom_fonts/font = SubResource( 4 )
+custom_fonts/font = SubResource( 2 )
 custom_colors/font_color = Color( 1, 0.603922, 0.603922, 1 )
 text = "S
 o
@@ -255,21 +255,21 @@ tint_progress = Color( 0.0784314, 0.223529, 1, 1 )
 position = Vector2( 18, 200 )
 emitting = false
 lifetime = 3.0
-process_material = SubResource( 7 )
+process_material = SubResource( 5 )
 texture = ExtResource( 8 )
 
 [node name="Particles2" type="Particles2D" parent="Camera2D/UI/Control/Scores/Scores/EnergyBar"]
 position = Vector2( 18, 200 )
 emitting = false
 lifetime = 2.0
-process_material = SubResource( 14 )
+process_material = SubResource( 6 )
 texture = ExtResource( 8 )
 
 [node name="Particles3" type="Particles2D" parent="Camera2D/UI/Control/Scores/Scores/EnergyBar"]
 position = Vector2( 18, 200 )
 emitting = false
 lifetime = 1.5
-process_material = SubResource( 15 )
+process_material = SubResource( 7 )
 texture = ExtResource( 8 )
 
 [node name="FitnessBar" type="TextureProgress" parent="Camera2D/UI/Control/Scores/Scores"]
@@ -293,14 +293,14 @@ texture = ExtResource( 8 )
 position = Vector2( 20, 200 )
 emitting = false
 lifetime = 2.0
-process_material = SubResource( 18 )
+process_material = SubResource( 13 )
 texture = ExtResource( 8 )
 
 [node name="Particles3" type="Particles2D" parent="Camera2D/UI/Control/Scores/Scores/FitnessBar"]
 position = Vector2( 20, 200 )
 emitting = false
 lifetime = 1.5
-process_material = SubResource( 21 )
+process_material = SubResource( 16 )
 texture = ExtResource( 8 )
 
 [node name="SocialBar" type="TextureProgress" parent="Camera2D/UI/Control/Scores/Scores"]
@@ -317,21 +317,21 @@ tint_progress = Color( 1, 0, 0, 1 )
 position = Vector2( 20, 200 )
 emitting = false
 lifetime = 3.0
-process_material = SubResource( 13 )
+process_material = SubResource( 19 )
 texture = ExtResource( 8 )
 
 [node name="Particles2" type="Particles2D" parent="Camera2D/UI/Control/Scores/Scores/SocialBar"]
 position = Vector2( 20, 200 )
 emitting = false
 lifetime = 2.0
-process_material = SubResource( 24 )
+process_material = SubResource( 22 )
 texture = ExtResource( 8 )
 
 [node name="Particles3" type="Particles2D" parent="Camera2D/UI/Control/Scores/Scores/SocialBar"]
 position = Vector2( 20, 200 )
 emitting = false
 lifetime = 1.5
-process_material = SubResource( 27 )
+process_material = SubResource( 25 )
 texture = ExtResource( 8 )
 
 [node name="Score" type="Label" parent="Camera2D/UI/Control"]
@@ -342,7 +342,7 @@ margin_top = 20.0
 margin_right = -20.0
 margin_bottom = 14.0
 grow_horizontal = 0
-custom_fonts/font = SubResource( 1 )
+custom_fonts/font = SubResource( 26 )
 
 [node name="Sprite" type="Sprite" parent="."]
 texture = ExtResource( 1 )
@@ -395,7 +395,7 @@ autostart = true
 [node name="Middle" type="Area2D" parent="."]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Middle"]
-shape = SubResource( 2 )
+shape = SubResource( 27 )
 
 [node name="ScoringTimer" type="Timer" parent="."]
 wait_time = 0.5

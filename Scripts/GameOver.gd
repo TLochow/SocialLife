@@ -42,4 +42,4 @@ func HighScoreCallCompleted(result, response_code, headers, body):
 		$Highscores/Online/Scores.add_child(entry)
 
 func _on_MenuButton_pressed():
-	SceneChanger.ChangeScene("res://Scenes/Main.tscn")
+	SceneChanger.ChangeScene("res://Scenes/Menu.tscn")
