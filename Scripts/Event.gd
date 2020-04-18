@@ -12,7 +12,7 @@ var state = 0
 
 func _physics_process(delta):
 	if state == 1:
-		if get_position().distance_to(Vector2(0, 0)) > 300.0:
+		if get_position().distance_to(Vector2(0, 0)) > 800.0:
 			queue_free()
 
 func SetEventType(type, sprite, fitnessBoost, energyBoost, socialBoost):
@@ -20,6 +20,7 @@ func SetEventType(type, sprite, fitnessBoost, energyBoost, socialBoost):
 	FitnessBoost = fitnessBoost
 	EnergyBoost = energyBoost
 	SocialBoost  = socialBoost
+	$Sprite.frame = sprite
 
 func Collide(paddleType):
 	if paddleType == EventType:

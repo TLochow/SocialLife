@@ -49,9 +49,9 @@ func _process(delta):
 	if mousePos.distance_to(Vector2(0, 0)) > 30.0:
 		get_viewport().warp_mouse(Vector2(400, 400) - (mouseDir.normalized() * 30.0))
 	
-	Energy = clamp(Energy - (0.1 * delta), 0.0, 100.0)
-	Fitness = clamp(Fitness - (0.1 * delta), 0.0, 100.0)
-	Social = clamp(Social - (0.1 * delta), 0.0, 100.0)
+	Energy = clamp(Energy - (1.0 * delta), 0.0, 100.0)
+	Fitness = clamp(Fitness - (1.0 * delta), 0.0, 100.0)
+	Social = clamp(Social - (1.0 * delta), 0.0, 100.0)
 	$Camera2D/UI/Control/Scores/EnergyBar.value = Energy
 	$Camera2D/UI/Control/Scores/FitnessBar.value = Fitness
 	$Camera2D/UI/Control/Scores/SocialBar.value = Social
@@ -67,9 +67,28 @@ func SpawnNewEvent():
 	event.set_position(pos)
 	event.set_linear_velocity(pos.normalized() * -80.0)
 	
-	var eventType = randi() % 10
-	
-	event.SetEventType(1, 0, 1.0, -1.0, 0.0)
+	var eventType = randi() % 6
+	match eventType: #                       Fit, Energy, Social
+		0: # Bed
+			event.SetEventType(3, eventType, 5.0, 30.0, -15.0)
+		1: # Shower
+			event.SetEventType(2, eventType, 5.0, 5.0, -5.0)
+		2: # Bar
+			event.SetEventType(1, eventType, -10.0, -10.0, 30.0)
+		3: # Energy Drink
+			event.SetEventType(3, eventType, -20.0, 0, 30.0)
+		4: # GYM
+			event.SetEventType(2, eventType, 30.0, -20.0, 5.0)
+		5: # Talk
+			event.SetEventType(1, eventType, 0, -5.0, 30.0)
+		6: 
+			event.SetEventType(0, eventType, 0, 0, 0)
+		7: 
+			event.SetEventType(0, eventType, 0, 0, 0)
+		8:
+			event.SetEventType(0, eventType, 0, 0, 0)
+		9:
+			event.SetEventType(0, eventType, 0, 0, 0)
 	
 	event.connect("Impact", self, "onEventImpact")
 	
