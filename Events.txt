@@ -1,0 +1,11 @@
+Plus Social: Talk
+Minus Fit: Bar
+Minus Energy: Concert
+
+Plus Energy: Coffee
+Minus Fit: Energy Drink
+Minus Social: Bed
+
+Plus Fit: Apple
+Minus Energy: Gym
+Minus Social: Meditation
