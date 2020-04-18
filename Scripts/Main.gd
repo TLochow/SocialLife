@@ -37,6 +37,10 @@ func ChangePaddle(direction):
 	$Paddles/RedPaddle.IsActive = SelectedPaddle == 1
 	$Paddles/GreenPaddle.IsActive = SelectedPaddle == 2
 	$Paddles/BluePaddle.IsActive = SelectedPaddle == 3
+	
+	$Paddles/SelectionIndicator/RedSelected.visible = SelectedPaddle == 1
+	$Paddles/SelectionIndicator/GreenSelected.visible = SelectedPaddle == 2
+	$Paddles/SelectionIndicator/BlueSelected.visible = SelectedPaddle == 3
 
 func _process(delta):
 	var mousePos = get_global_mouse_position()
