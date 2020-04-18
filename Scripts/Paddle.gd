@@ -2,6 +2,8 @@ extends Area2D
 
 var PaddleType
 
+var IsActive = false
+
 var Angle = 0.0
 var IdleRotation = 0.1
 
@@ -11,11 +13,14 @@ func _ready():
 		IdleRotation *= -1
 
 func _process(delta):
-	Angle += IdleRotation * delta
+	if not IsActive:
+		Angle += IdleRotation * delta
+	
 	while Angle < -PI:
 		Angle += TAU
 	while Angle > PI:
 		Angle -= TAU
+	
 	rotation_degrees = rad2deg(Angle)
 
 func SetPaddleType(var type):

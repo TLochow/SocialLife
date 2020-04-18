@@ -27,33 +27,33 @@ anchor_left = 1.0
 anchor_top = 1.0
 anchor_right = 1.0
 anchor_bottom = 1.0
-margin_left = -188.0
-margin_top = -295.0
+margin_left = -151.0
+margin_top = -227.0
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
 [node name="EnergyBar" type="TextureProgress" parent="Camera2D/UI/Control/Scores"]
-margin_right = 20.0
-margin_bottom = 295.0
+margin_right = 40.0
+margin_bottom = 227.0
 value = 50.0
 texture_progress = ExtResource( 4 )
 fill_mode = 3
 tint_progress = Color( 0, 0, 1, 1 )
 
 [node name="FitnessBar" type="TextureProgress" parent="Camera2D/UI/Control/Scores"]
-margin_left = 24.0
-margin_right = 44.0
-margin_bottom = 295.0
+margin_left = 44.0
+margin_right = 84.0
+margin_bottom = 227.0
 value = 50.0
 texture_progress = ExtResource( 4 )
 fill_mode = 3
 tint_progress = Color( 0, 1, 0, 1 )
 
 [node name="SocialBar" type="TextureProgress" parent="Camera2D/UI/Control/Scores"]
-margin_left = 48.0
-margin_right = 68.0
-margin_bottom = 295.0
+margin_left = 88.0
+margin_right = 128.0
+margin_bottom = 227.0
 value = 50.0
 texture_progress = ExtResource( 4 )
 fill_mode = 3
