@@ -70,15 +70,15 @@ func SpawnNewEvent():
 	var eventType = randi() % 6
 	match eventType: #                       Fit, Energy, Social
 		0: # Bed
-			event.SetEventType(3, eventType, 5.0, 30.0, -15.0)
+			event.SetEventType(3, eventType, 0.0, 30.0, -15.0)
 		1: # Shower
-			event.SetEventType(2, eventType, 5.0, 5.0, -5.0)
+			event.SetEventType(2, eventType, 10.0, 0.0, -5.0)
 		2: # Bar
-			event.SetEventType(1, eventType, -10.0, -10.0, 30.0)
+			event.SetEventType(1, eventType, 0.0, -15.0, 30.0)
 		3: # Energy Drink
 			event.SetEventType(3, eventType, -20.0, 0, 30.0)
 		4: # GYM
-			event.SetEventType(2, eventType, 30.0, -20.0, 5.0)
+			event.SetEventType(2, eventType, 30.0, -20.0, 0.0)
 		5: # Talk
 			event.SetEventType(1, eventType, 0, -5.0, 30.0)
 		6: 

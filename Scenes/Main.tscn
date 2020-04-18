@@ -39,7 +39,7 @@ margin_bottom = 227.0
 value = 50.0
 texture_progress = ExtResource( 4 )
 fill_mode = 3
-tint_progress = Color( 0, 0, 1, 1 )
+tint_progress = Color( 0.0784314, 0.223529, 1, 1 )
 
 [node name="FitnessBar" type="TextureProgress" parent="Camera2D/UI/Control/Scores"]
 margin_left = 44.0
@@ -48,7 +48,7 @@ margin_bottom = 227.0
 value = 50.0
 texture_progress = ExtResource( 4 )
 fill_mode = 3
-tint_progress = Color( 0, 1, 0, 1 )
+tint_progress = Color( 0.223529, 1, 0.0784314, 1 )
 
 [node name="SocialBar" type="TextureProgress" parent="Camera2D/UI/Control/Scores"]
 margin_left = 88.0

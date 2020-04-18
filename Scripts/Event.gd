@@ -17,10 +17,17 @@ func _physics_process(delta):
 
 func SetEventType(type, sprite, fitnessBoost, energyBoost, socialBoost):
 	EventType = type
-	FitnessBoost = fitnessBoost
-	EnergyBoost = energyBoost
-	SocialBoost  = socialBoost
+	FitnessBoost = fitnessBoost * 0.5
+	EnergyBoost = energyBoost * 0.5
+	SocialBoost  = socialBoost * 0.5
 	$Sprite.frame = sprite
+	
+	$Particles/SocialPlus.emitting = socialBoost > 0
+	$Particles/SocialMinus.emitting = socialBoost < 0
+	$Particles/FitnessPlus.emitting = fitnessBoost > 0
+	$Particles/FitnessMinus.emitting = fitnessBoost < 0
+	$Particles/EnergyPlus.emitting = energyBoost > 0
+	$Particles/EnergyMinus.emitting = energyBoost < 0
 
 func Collide(paddleType):
 	if paddleType == EventType:
