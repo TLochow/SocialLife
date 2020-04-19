@@ -137,6 +137,7 @@ func SpawnNewEvent():
 	$Events.add_child(event)
 
 func onEventImpact(fitness, energy, social):
+	$Audio/Effect.play()
 	Fitness += fitness
 	Energy += energy
 	Social += social

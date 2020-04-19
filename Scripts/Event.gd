@@ -35,6 +35,7 @@ func SetEventType(type, sprite, fitnessBoost, energyBoost, socialBoost):
 
 func Collide(paddleType):
 	if paddleType == EventType:
+		$Audio/Deflected.play()
 		state = 1
 		set_linear_velocity(get_linear_velocity() * -2.0)
 

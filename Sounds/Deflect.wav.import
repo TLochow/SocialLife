@@ -1,0 +1,21 @@
+[remap]
+
+importer="wav"
+type="AudioStreamSample"
+path="res://.import/Deflect.wav-52652effeed7f3d592b875d42ab6ec28.sample"
+
+[deps]
+
+source_file="res://Sounds/Deflect.wav"
+dest_files=[ "res://.import/Deflect.wav-52652effeed7f3d592b875d42ab6ec28.sample" ]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop=false
+compress/mode=0
