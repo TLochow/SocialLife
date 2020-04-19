@@ -1,6 +1,6 @@
 [gd_scene load_steps=36 format=2]
 
-[ext_resource path="res://icon.png" type="Texture" id=1]
+[ext_resource path="res://Sprites/Guy.png" type="Texture" id=1]
 [ext_resource path="res://Scenes/Paddle.tscn" type="PackedScene" id=2]
 [ext_resource path="res://Scripts/Main.gd" type="Script" id=3]
 [ext_resource path="res://Sprites/White Transparent.png" type="Texture" id=4]
@@ -344,8 +344,10 @@ margin_bottom = 14.0
 grow_horizontal = 0
 custom_fonts/font = SubResource( 26 )
 
-[node name="Sprite" type="Sprite" parent="."]
+[node name="Guy" type="Sprite" parent="."]
+scale = Vector2( 4, 4 )
 texture = ExtResource( 1 )
+vframes = 8
 
 [node name="Paddles" type="Node2D" parent="."]
 

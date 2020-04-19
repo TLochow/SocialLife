@@ -12,6 +12,8 @@ var SelectedPaddle = 0
 
 var EventSpawnTime = 5.0
 
+var GameOver = false
+
 func _ready():
 	Input.set_mouse_mode(Input.MOUSE_MODE_HIDDEN)
 	$Paddles/RedPaddle.SetPaddleType(1)
@@ -68,10 +70,11 @@ func _process(delta):
 	if mousePos.distance_to(Vector2(0, 0)) > 30.0:
 		get_viewport().warp_mouse(Vector2(400, 400) - (mouseDir.normalized() * 30.0))
 	
-	var malus = 0.1 * delta
-	Energy = clamp(Energy - malus, 0.0, 100.0)
-	Fitness = clamp(Fitness - malus, 0.0, 100.0)
-	Social = clamp(Social - malus, 0.0, 100.0)
+	$Guy.frame = Global.DegreesToDirectionNumber(rad2deg(mouseDir.angle()))
+	
+	Energy = clamp(Energy, 0.0, 100.0)
+	Fitness = clamp(Fitness, 0.0, 100.0)
+	Social = clamp(Social, 0.0, 100.0)
 	$Camera2D/UI/Control/Scores/Scores/EnergyBar.value = Energy
 	$Camera2D/UI/Control/Scores/Scores/FitnessBar.value = Fitness
 	$Camera2D/UI/Control/Scores/Scores/SocialBar.value = Social
@@ -92,8 +95,10 @@ func _process(delta):
 	$EventSpawnTimer.wait_time = EventSpawnTime
 	
 	if Social <= 0.0 or Fitness <= 0.0 or Energy <= 0.0:
-		Global.Score = Score
-		SceneChanger.ChangeScene("res://Scenes/GameOver.tscn")
+		if not GameOver:
+			Global.Score = Score
+			GameOver = true
+			SceneChanger.ChangeScene("res://Scenes/GameOver.tscn")
 
 func _on_EventSpawnTimer_timeout():
 	SpawnNewEvent()
@@ -140,9 +145,10 @@ func _on_Middle_body_entered(body):
 	body.ReachedMiddle()
 
 func _on_ScoringTimer_timeout():
-	if Social > 50:
-		Score += int(Social - 50)
-	if Fitness > 50:
-		Score += int(Fitness - 50)
-	if Energy > 50:
-		Score += int(Energy - 50)
+	if not GameOver:
+		if Social > 50:
+			Score += int(Social - 50)
+		if Fitness > 50:
+			Score += int(Fitness - 50)
+		if Energy > 50:
+			Score += int(Energy - 50)
